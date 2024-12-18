@@ -1,0 +1,66 @@
+.App-header {
+  background-color: #282c34;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: relative;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FF9800;
+}
+
+.navbar a::before,
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFD824, transparent);
+  transition: all 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.navbar a::before {
+  top: -2px;
+  bottom: auto;
+  height: 2px;
+}
+
+.navbar a:hover::before,
+.navbar a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar a:hover::after {
+  animation: lightning 1s infinite ease-in-out;
+}
+
+@keyframes lightning {
+  0% {
+    box-shadow: 0 0 8px #FFD824, 0 0 20px #FFD824, 0 0 30px #FFD824;
+  }
+  50% {
+    box-shadow: 0 0 15px #FFD824, 0 0 25px #FFD824, 0 0 40px #FFD824;
+  }
+  100% {
+    box-shadow: 0 0 8px #FFD824, 0 0 20px #FFD824, 0 0 30px #FFD824;
+  }
+}
